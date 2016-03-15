@@ -1,3 +1,7 @@
+Dir[File.expand_path('../lib/show_important_projects_review', __FILE__) << '/*.rb'].each do |file|
+  require_dependency file
+end
+
 Redmine::Plugin.register :show_important_projects_review do
   name 'Show Important Projects Review plugin'
   author 'Author name'
