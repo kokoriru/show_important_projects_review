@@ -11,6 +11,7 @@ module ShowImportantProjectsReview
     def render_project_hierarchy_with_show_important_projects_review(projects)
       s = render_important_projects
       s << render_project_hierarchy_without_show_important_projects_review(projects)
+      s << javascript_include_tag('move_head2_tag', plugin: 'show_important_projects_review')
       s.html_safe
     end
 
@@ -24,7 +25,7 @@ module ShowImportantProjectsReview
         s << '</div></li>'
       end
       s << '</ul>'
-      s << "<hr style='margin: 24px 0;' />"
+      s << "<hr id='break_important_projects' style='margin: 24px 0;' />"
     end
   end
 end
