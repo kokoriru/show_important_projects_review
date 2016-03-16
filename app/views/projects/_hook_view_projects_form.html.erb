@@ -1,0 +1,6 @@
+<p>
+  <label for='is_important'>重要プロジェクト</label>
+  <%# check_box_tag は未チェック時にパラメーターを送らないため、hidden_field_tag を使用 %>
+  <%= hidden_field_tag 'project[important_project_attributes][is_important]', false %>
+  <%= check_box_tag 'project[important_project_attributes][is_important]', true, @project.important?, id: 'is_important' %>
+</p>

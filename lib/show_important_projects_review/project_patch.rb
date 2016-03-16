@@ -7,6 +7,10 @@ module ShowImportantProjectsReview
     included do
       unloadable
       has_one :important_project, dependent: :destroy
+      safe_attributes :important_project_attributes
+      accepts_nested_attributes_for :important_project
+
+      scope :importants, -> { joins(:important_project).where(important_projects: { is_important: true }) }
     end
 
     def important?
